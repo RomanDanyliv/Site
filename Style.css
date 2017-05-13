@@ -1,0 +1,288 @@
+html {
+    display: flex;
+}
+
+body {
+    flex: auto;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+}
+
+ul {
+    flex: auto;
+    flex-direction: column;
+}
+
+li {
+    flex: auto;
+    flex-direction: column;
+}
+
+.Logo {
+    flex: 1 1 70%;
+    width: 100%;
+    height: auto;
+}
+
+.Search {
+    flex: 1 1 30%;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    flex: auto;
+    height: 100px;
+}
+
+.Content {
+    display: flex;
+    flex-direction: row;
+}
+
+.Advertise {
+    display: flex;
+    flex: 1 1 30%;
+    align-content: center;
+    background: #f2f2f2;
+    margin: 0 0.5% 0 0;
+}
+
+.Data {
+    display: flex;
+    flex: 1 1 70%;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background: #f2f2f2;
+}
+
+footer {
+    position: relative;
+    background-color: gainsboro;
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    color: #fff;
+    background-color: maroon;
+    border: 1px solid red;
+    border: none;
+    height: 32px;
+    font-family: 'Oswald', sans-serif;
+}
+
+input {
+    background-color: #f3f3f3;
+    border: 1px solid #e7e7e7;
+    height: 30px;
+    color: black;
+    padding: 0 10px;
+    vertical-align: top;
+}
+
+.Button {
+    align-items: center;
+    margin: 2%;
+    color: #fff;
+    background-color: maroon;
+    border: 1px solid red;
+    border: none;
+    height: 32px;
+    align-self: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.Button:hover {
+    background: #b91717;
+}
+
+.Navigation {
+    border: maroon;
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: row;
+    background: #faf6f6;
+    border-bottom: 4px solid maroon;
+    border-top: 4px solid maroon;
+}
+
+.Navbutton {
+    flex: 1 1 calc((100%+30px)/2);
+    padding: 1em;
+    background: #d07e7e;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: 0 2% 0 2%;
+    text-align: center;
+}
+
+.Adv {
+    width: 100%;
+    height: 300px;
+}
+
+blockquote {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    background: #b43c3c;
+    padding: 10px 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+}
+
+p {
+    color: #fff;
+    font-style: italic;
+    font-size: 170%;
+    margin: 0;
+}
+
+figcaption {
+    color: maroon;
+    text-align: center;
+}
+
+#BlockQ2 {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row wrap;
+    background: #f2f2f2;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.SiteMap {
+    font: 0.7em 'Oswald', sans-serif;
+    background: #d07e7e;
+    height: auto;
+    color: #ffffff;
+    border-radius: 3px;
+    text-decoration: none;
+    ;
+}
+
+.Navbutton:hover {
+    background: #b91717;
+}
+
+.previev {
+    width: 35%;
+    height: 20%;
+}
+
+#search_prev {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    background-color: whitesmoke;
+    position: absolute;
+}
+
+.news {
+    display: flex;
+    flex: 1 1 45%;
+    align-self: baseline;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    margin: 2.5%;
+    background-color: brown;
+    color: cadetblue;
+}
+
+.describe {
+    display: flex;
+    flex: 1 1 100%;
+    align-content: center;
+    flex-direction: column;
+    color: aliceblue;
+    background-color: brown;
+    visibility: toggle;
+    margin: 1%;
+}
+
+.Field {
+    display: flex;
+    flex: 1 1 100% flex-direction: column;
+}
+
+.Comment {
+    display: flex;
+    background-color: cornsilk;
+    flex: 1 1 95%;
+    margin: 1%;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    color: black;
+}
+
+.Posts {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+legend {
+    display: flex;
+    flex: 1 1 25%;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    align-content: space-between;
+    text-align: center;
+}
+
+.Reg {
+    align-self: center;
+}
+
+fieldset {
+    display: flex;
+    flex: 1 1 25%;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    text-align: justify;
+    flex-direction: column;
+}
+
+.RegField {
+    align-items: flex-end;
+    align-self: flex-end;
+    text-align: right;
+}
+
+label {
+    text-align: right;
+}
+
+.Login_form {
+    display: block;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    width: 100%;
+}
