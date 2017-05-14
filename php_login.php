@@ -16,17 +16,19 @@ if (mysql_num_rows($res1)==0)
 $str="Всьо ОК";}
 mysql_close($mysqli);
 ?>
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
+
     <head>
-       <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-       <script src="script/jQuery.js" type="text/javascript"></script>
-	   <script src="script/main.js" type="text/javascript"></script>
-       <link rel="stylesheet" href="Style.css">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <script src="script/jQuery.js" type="text/javascript"></script>
+        <script src="script/main.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="Style.css">
         <title>
             Test
         </title>
     </head>
+
     <body>
         <div class="Header">
             <div class="Logo">
@@ -34,10 +36,10 @@ mysql_close($mysqli);
             </div>
             <div class="Search">
                 <form name="Search" id="Search_form" action="Search.php" method="post">
-                <input name="WHAT_POST" id="WHAT_POST" value='' type="hidden"> 
-	            <input type="text" id='search_ed' name="question" value='' placeholder="Search" onkeyup="if (this.value.length==0) $('#search_prev').empty(); else $.ajax( {type: 'POST', url: 'search_previev.php', data: {'question': this.value}, success: function(data) {$('#search_prev').html(data);}})">
-                <button type="submit">GO</button>
-                <div id="search_prev"></div>
+                    <input name="WHAT_POST" id="WHAT_POST" value='' type="hidden">
+                    <input type="text" id='search_ed' name="question" value='' placeholder="Search" onkeyup="if (this.value.length==0) $('#search_prev').empty(); else $.ajax( {type: 'POST', url: 'search_previev.php', data: {'question': this.value}, success: function(data) {$('#search_prev').html(data);}})">
+                    <button type="submit">GO</button>
+                    <div id="search_prev"></div>
                 </form>
                 <?php
                    include "php_user_name.php";
@@ -45,41 +47,45 @@ mysql_close($mysqli);
             </div>
         </div>
         <div class="Navigation">
-                <a href="index.php" class="Navbutton">Головна</a>
-                <a href="#" class="Navbutton">Статті</a>
-                <a href="news.php" class="Navbutton">Новини</a>
-                <a href="#" class="Navbutton">Проекти</a>
-                <a href="registration.php" class="Navbutton">Реєстрація</a>
-                <a href="#" class="Navbutton">Контакти</a>                          
-        </div>  
+            <a href="index.php" class="Navbutton">Головна</a>
+            <a href="#" class="Navbutton">Статті</a>
+            <a href="news.php" class="Navbutton">Новини</a>
+            <a href="#" class="Navbutton">Проекти</a>
+            <a href="registration.php" class="Navbutton">Реєстрація</a>
+            <a href="#" class="Navbutton">Контакти</a>
+        </div>
         <div class="Content">
             <div class="Advertise">
                 <img id='Nyan_Cat' class="Adv" src="images/NyanCat/1.jpg" onmouseover="NyanCat()" onmouseout="audio_stop()">
             </div>
             <div class="Data">
                 <blockquote id="BlockQ1">
-                 <center>
-                 <?php
-                    echo $str;
-                 ?>
-	            </center></blockquote>
+                    <div style="margin:auto;font-size:xx-large">
+                        <center>
+                            <?php
+                                echo $str;
+                             ?>
+                        </center>
+                    </div>
+                </blockquote>
             </div>
         </div>
         <footer>
             <div>
-                <ul>  
+                <ul>
                     <li><a href="#" class="SiteMap">ГОЛОВНА</a></li>
                     <li><a href="#" class="SiteMap">Статті</a></li>
                     <li><a href="#" class="SiteMap">Новини</a></li>
-                </ul>  
+                </ul>
             </div>
             <div>
                 <ul>
-                    <li><a href="#" class="SiteMap" >Проекти</a></li>
+                    <li><a href="#" class="SiteMap">Проекти</a></li>
                     <li><a href="#" class="SiteMap">Реєстрація</a></li>
                     <li><a href="#" class="SiteMap">Контакти</a></li>
-                 </ul>  
+                </ul>
             </div>
         </footer>
     </body>
-</html>
+
+    </html>

@@ -24,6 +24,11 @@ li {
     flex-direction: column;
 }
 
+ol
+{
+    display: flex;
+}
+
 .Logo {
     flex: 1 1 70%;
     width: 100%;
@@ -42,9 +47,10 @@ li {
 
 .Header {
     display: flex;
-    flex-direction: row;
     flex: auto;
-    height: 100px;
+    flex-flow: row wrap;
+    flex-direction: row; 
+    height: auto;
 }
 
 .Content {
@@ -140,8 +146,11 @@ input {
 
 blockquote {
     display: flex;
+    flex: 1 1 100%;
+    width: 95%;
+    height: 100%;
     flex-direction: row;
-    margin: 0;
+    margin: auto;
     background: #b43c3c;
     padding: 10px 20px;
     font-family: 'Oswald', sans-serif;
@@ -201,7 +210,7 @@ figcaption {
 .news {
     display: flex;
     flex: 1 1 45%;
-    align-self: baseline;
+    align-self: stretch;
     flex-direction: column;
     align-items: center;
     text-align: left;
@@ -285,4 +294,13 @@ label {
     align-items: center;
     align-self: center;
     width: 100%;
+}
+
+.postNav
+{
+    display: flex;
+}
+
+.navbutton:hover {
+    background-color: darkgrey;
 }

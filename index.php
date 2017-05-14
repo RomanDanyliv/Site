@@ -15,7 +15,7 @@ session_start();
     <body>
         <div class="Header">
             <div class="Logo">
-                <img id='Logo_pic' src="images/logo.png" alt="Web-Sait-Logo" onmousedown="$(this).attr('src','images/logopressed.png')" onmouseup="$(this).attr('src','images/logo.png')">
+                <img id='Logo_pic' src="images/logo.png" alt="Web-Sait-Logo" onmousedown="$(this).attr('src','images/logopressed.png')" onmouseup="$(this).attr('src','images/logo.png')" width="100%" height="100%">
             </div>
             <div class="Search">
                 <form name="Search" id="Search_form" action="Search.php" method="post">

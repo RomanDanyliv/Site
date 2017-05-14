@@ -174,6 +174,14 @@ function del(ident) {
         });
 }
 
+function leave_comment(ident) {
+        $.post('php_delete.php', {
+            Id: ident
+        }).done(function () {
+            window.location.reload();
+        });
+}
+
 function ren_post(identef) {
     $("#Remake_ed").val(identef);
     $("#Remake_form").submit();

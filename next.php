@@ -36,11 +36,11 @@ $mysqli = mysql_connect('localhost', 'root', '');
                         {
                             echo "<div class='navigation'>";
                             echo "<nav><center>";
-                            echo "<ol id='positionNav' style='padding:inherit;justify-content:space-between;'>";
-                            echo "<li><input type='button' class='navbutton' value='Редагувати' style='margin-top:2%' onclick='ren_post(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)'></li>";
-                            echo "<div style='padding: 1em;padding: 5px 10px;'>Дії з постом</div>";
-                            echo "<li><input type='button' class='navbutton' value='Видалити' style='margin-top:2%' onclick='del(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)'></li>";
-                            echo "</ol>";
+                            echo "<div class='postNav'>";
+                            echo "<input type='button' class='navbutton' value='Редагувати' style='margin-top:2%' onclick='ren_post(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)'>";
+                            echo "<div style='padding: 1em;padding: 5px 10px;'>   Дії з постом   </div>";
+                            echo "<input type='button' class='navbutton' value='Видалити' style='margin-top:2%' onclick='del(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)'>";
+                            echo "</div>";
                             echo "</center></nav>";                                  
                             echo "</div>";
                         }
@@ -60,13 +60,18 @@ $mysqli = mysql_connect('localhost', 'root', '');
                 {
                     echo "<div style='width:100%'><center><h3>Ви повинні бути зареєстровані, щоб мати змогу залишати коментар</h3></center></div>"; 
                 }
+
                 if ($_SESSION['Login']=='Admin') 
-                {
-                    echo "<div style='width:100%'><h2><a href='php_post_func.php' class='navbutton'>Створити новий пост</a></h2></div>";
+                {   
+                    echo "<center>";
+                    echo "<div style='padding:1%; background-color:brown;'><h2>
+                    <a href='php_post_func.php' class='navbutton' style=\"color:black;\">Створити новий пост</a></h2></div>";
                     echo "<form  id='Remake_form' action='php_post_func.php' method='post' style='width:98%;height:auto'>";
                     echo "<input id='Remake_ed' name='ID_POST' value='' style='visibility:hidden'>";
                     echo "</form>";  
+                    echo "</center>";
                 }
+
                 echo "<div class=\"Button\">";
                 if ($_SESSION['start']>1 && $_SESSION['end']+6<=$_SESSION['MAX_POST'])  
                 {
