@@ -49,12 +49,14 @@ $mysqli = mysql_connect('localhost', 'root', '');
                 echo "</div>";
                 if (isset($_SESSION['Login'])) 
                 {
-                    echo "<form id='COMM' action='php_comment.php' method='post' style='width:98%;height:auto'>";
+                    echo "<div style=\"display:flex;flex-direction:column;margin:2%\">";
+                    echo "<form id='COMM' action='php_comment.php' method='post' style='width:98%;height:auto;display:flex; flex-direction:column;'>";
                     echo "<center><h2>Будь-ласка, залишіть свій коментар</h2></center>";
                     echo "<input id='TO' name='TO' value='' style='visibility:hidden'>";
-                    echo "<textarea name='COMM' rows='3'></textarea>";  
-                    echo "<input type='submit' value='Коментувати'>";
+                    echo "<textarea name='COMM' rows='5' style='margin:auto;width:80%;height:100px'></textarea>";  
+                    echo "<input type='submit' value='Коментувати' style='margin:auto'>";
                     echo "</form>";   
+                    echo "</div>";
                 }
                 else 
                 {
