@@ -308,3 +308,8 @@ label {
 .navbutton:hover {
     background-color: darkgrey;
 }
+
+.Search_prev:hover
+{
+    background-color: lightgrey;
+}

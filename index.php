@@ -10,12 +10,12 @@ session_start();
        <link rel="stylesheet" href="Style.css">
         <title>
             Test
-        </title>
+        </title>   
     </head>
     <body>
         <div class="Header">
             <div class="Logo">
-                <img id='Logo_pic' src="images/logo.png" alt="Web-Sait-Logo" onmousedown="$(this).attr('src','images/logopressed.png')" onmouseup="$(this).attr('src','images/logo.png')" width="100%" height="100%">
+                <img id='Logo_pic' src="images/logo.png" alt="Web-Sait-Logo" onmousedown="$(this).attr('src','images/logopressed.png')" onmouseup="$(this).attr('src','images/logo.png')">
             </div>
             <div class="Search">
                 <form name="Search" id="Search_form" action="Search.php" method="post">
@@ -36,7 +36,7 @@ session_start();
                 <a href="#" class="Navbutton">Проекти</a>
                 <a href="registration.php" class="Navbutton">Реєстрація</a>
                 <a href="#" class="Navbutton">Контакти</a>                          
-        </div>  
+        </div> 
         <div class="Content">
             <div class="Advertise">
                 <img id='Nyan_Cat' class="Adv" src="images/NyanCat/1.jpg" onmouseover="NyanCat()" onmouseout="audio_stop()">
