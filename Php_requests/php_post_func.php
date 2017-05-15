@@ -3,67 +3,55 @@ session_start();
 if ($_SESSION['Login']!="Admin")
 exit
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<script src="script/jQuery.js" type="text/javascript"></script>
-	<script src="script/main.js" type="text/javascript"></script>
-	<title>NO game NO party</title>
-	<link rel="stylesheet" href="css/registration.css" type="text/css">
-</head>
-<body>
- <audio src="images/cat_original.mp3">
-  Your browser does not support the <code>audio</code> element.
-</audio>
-  <div class="all">
-   <div class="main">
-     <div class="bl header">
-         <div class="logo"><img id='logo_pic' src="images/logo.png" alt="Web-Sait-Logo" 
-         onmousedown="$(this).attr('src','images/logopressed.png')"
-       onmouseup="$(this).attr('src','images/logo.png')">
-       </div>
-     </div>
-     <div class="bl SearchForm" style="display:block">
-        <form name="search" action="search.php" method="post">
-	    <input type="text" name="question" placeholder="Search"><button type="submit">GO</button>
-        </form>
-       </br>
-       <?php
-       if (isset($_SESSION['Login']))
-       {echo "Привіт, ".$_SESSION['Login']."</br>";
-        echo "<a href='login.php'>Вийти</a>"; } 
-       else {echo "<a href='login.php'>Авторизація</a>";}
-       ?>
-      </div>
-    <div class="navigation">
-        <nav>
-            <ul id="positionNav">
-                <li><a href="index.php" class="navbutton">Головна</a></li>
-                <li><a href="#" class="navbutton">Статті</a></li>
-                <li><a href="news.php" class="navbutton">Новини</a></li>
-                <li><a href="#" class="navbutton">Проекти</a></li>
-                <li><a href="registration.php" class="navbutton">Реєстрація</a></li>
-                <li><a href="#" class="navbutton">Контакти</a></li>
-            </ul>
-        </nav>                                  
-     </div>
-   <div id="pictures" class = "bl asside">
-       <img id='Nyan_Cat' src="images/NyanCat/1.jpg" style="width:100%;height:100%" alt="Коте йпт" 
-       onmouseover="NyanCat()" onmouseout="audio_stop()">
-    <input id="add_pic" type="file" name="my-pic" id="file-field" class="image"/>
-   </div>
-     <div class = "asside2">
-       
-     </div>
-      <div class = "bl registration" style="display:block" id="post_func_id">
-	<form name="login"  method="post">
-<!--	action="test.php" method="post" class = "Form" onsubmit="return grand();-->
-          </br>
-    <fieldset>
-	<legend>Створення нового посту</legend>
-	<?php
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <script src="Script/jQuery.js" type="text/javascript"></script>
+        <script src="Script/main.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="Style.css">
+        <title>
+            Test
+        </title>
+    </head>
+
+    <body>
+        <div class="Header">
+            <div class="Logo">
+                <img id='Logo_pic' src="images/logo.png" alt="Web-Sait-Logo" onmousedown="$(this).attr('src','images/logopressed.png')" onmouseup="$(this).attr('src','images/logo.png')" width="100%" height="100%">
+            </div>
+            <div class="Search">
+                <form name="Search" id="Search_form" action="Search.php" method="post">
+                    <input name="WHAT_POST" id="WHAT_POST" value='' type="hidden">
+                    <input type="text" id='search_ed' name="question" value='' placeholder="Search" onkeyup="if (this.value.length==0) $('#search_prev').empty(); else $.ajax( {type: 'POST', url: 'search_previev.php', data: {'question': this.value}, success: function(data) {$('#search_prev').html(data);}})">
+                    <button type="submit">GO</button>
+                    <div id="search_prev"></div>
+                </form>
+                <?php
+                   include "Php_requests/php_user_name.php";
+                ?>
+            </div>
+        </div>
+        <div class="Navigation">
+            <a href="index.php" class="Navbutton">Головна</a>
+            <a href="#" class="Navbutton">Статті</a>
+            <a href="news.php" class="Navbutton">Новини</a>
+            <a href="#" class="Navbutton">Проекти</a>
+            <a href="registration.php" class="Navbutton">Реєстрація</a>
+            <a href="#" class="Navbutton">Контакти</a>
+        </div>
+        <div class="Content">
+            <div class="Advertise">
+                <img id='Nyan_Cat' class="Adv" src="images/NyanCat/1.jpg" onmouseover="NyanCat()" onmouseout="audio_stop()">
+            </div>
+            <div class="Data">
+                <form name="login" method="post">
+                    <!--	action="test.php" method="post" class = "Form" onsubmit="return grand();-->
+                    </br>
+                    <fieldset>
+                        <legend>Створення нового посту</legend>
+                        <?php
     if (isset($_POST['ID_POST']))
     {$mysqli = mysql_connect('localhost', 'root', '');
      if (mysqli_connect_errno()) {
@@ -108,30 +96,30 @@ exit
     echo "<label>Дата створення</br><input id='DATE' type ='text' name='DATE' placeholder ='Enter date' value = 'DATE' onfocus='if (this.value == 'DATE') {this.value=''}' onBlur='if (this.value == '') {this.value='DATE'}' style='float:none'> </label>";
     }
     ?>
-	<input type="checkbox" id='DATE_TODAY' name="Today" value="date" onchange="check_change()">Сьогоднішня дата</br></br>
-	<input type="button" value="OK" onclick="create_renew()">
-	</fieldset>
-	</form>
-   </div>
-   <div class = "bl fotter">
-       <div class>
-           <ul>
-                <li><a href="#" class="SiteMap">ГОЛОВНА</a></li>
-                <li><a href="#" class="SiteMap">Статті</a></li>
-                <li><a href="#" class="SiteMap">Новини</a></li>
-          </ul>
+                            <label>>Сьогоднішня дата
+	<input type="checkbox" id='DATE_TODAY' name="Today" value="date" onchange="check_change()"></label></br>
+                            </br>
+                            <label><input type="button" value="OK" onclick="create_renew()"></label>
+                    </fieldset>
+                </form>
+            </div>
         </div>
-        <div>
-           <ul>
-               <li><a href="#" class="SiteMap">Проекти</a></li>
-                <li><a href="#" class="SiteMap">Реєстрація</a></li>
-                <li><a href="#" class="SiteMap">Контакти</a></li>
-         </ul>  
-        </div>
-        <div class="SocNetw">
-        </div>
-   </div>
-   </div>
-   </div>   
-</body>
-</html>
+        <footer>
+            <div>
+                <ul>
+                    <li><a href="#" class="SiteMap">ГОЛОВНА</a></li>
+                    <li><a href="#" class="SiteMap">Статті</a></li>
+                    <li><a href="#" class="SiteMap">Новини</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#" class="SiteMap">Проекти</a></li>
+                    <li><a href="#" class="SiteMap">Реєстрація</a></li>
+                    <li><a href="#" class="SiteMap">Контакти</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+
+    </html>

@@ -36,11 +36,11 @@ $mysqli = mysql_connect('localhost', 'root', '');
                         {
                             echo "<div class='navigation'>";
                             echo "<nav><center>";
-                            echo "<ol id='positionNav' style='padding:inherit;justify-content:space-between;'>";
-                            echo "<li><input type='button' class='navbutton' value='Редагувати' style='margin-top:2%' onclick='ren_post(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)'></li>";
-                            echo "<div style='padding: 1em;padding: 5px 10px;'>Дії з постом</div>";
-                            echo "<li><input type='button' class='navbutton' value='Видалити' style='margin-top:2%' onclick='del(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)'></li>";
-                            echo "</ol>";
+                            echo "<div class='postNav'>";
+                            echo "<input type='button' class='navbutton' value='Редагувати' style='margin-top:2%' onclick='ren_post(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)'>";
+                            echo "<div style='padding: 1em;padding: 5px 10px;'>   Дії з постом   </div>";
+                            echo "<input type='button' class='navbutton' value='Видалити' style='margin-top:2%' onclick='del(this.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode.id)'>";
+                            echo "</div>";
                             echo "</center></nav>";                                  
                             echo "</div>";
                         }
@@ -49,37 +49,44 @@ $mysqli = mysql_connect('localhost', 'root', '');
                 echo "</div>";
                 if (isset($_SESSION['Login'])) 
                 {
-                    echo "<form id='COMM' action='php_comment.php' method='post' style='width:98%;height:auto'>";
+                    echo "<div style=\"display:flex;flex-direction:column;margin:2%\">";
+                    echo "<form id='COMM' action='Php_requests/php_comment.php' method='post' style='width:98%;height:auto;display:flex; flex-direction:column;'>";
                     echo "<center><h2>Будь-ласка, залишіть свій коментар</h2></center>";
                     echo "<input id='TO' name='TO' value='' style='visibility:hidden'>";
-                    echo "<textarea name='COMM' rows='3'></textarea>";  
-                    echo "<input type='submit' value='Коментувати'>";
+                    echo "<textarea name='COMM' rows='5' style='margin:auto;width:80%;height:100px'></textarea>";  
+                    echo "<input type='submit' value='Коментувати' style='margin:auto'>";
                     echo "</form>";   
+                    echo "</div>";
                 }
                 else 
                 {
                     echo "<div style='width:100%'><center><h3>Ви повинні бути зареєстровані, щоб мати змогу залишати коментар</h3></center></div>"; 
                 }
+                
                 if ($_SESSION['Login']=='Admin') 
-                {
-                    echo "<div style='width:100%'><h2><a href='php_post_func.php' class='navbutton'>Створити новий пост</a></h2></div>";
-                    echo "<form  id='Remake_form' action='php_post_func.php' method='post' style='width:98%;height:auto'>";
+                {   
+                    echo "<center>";
+                    echo "<div style='padding:1%; background-color:brown;'><h2>
+                    <a href='create_post.php' class='navbutton' style=\"color:black;\">Створити новий пост</a></h2></div>";
+                    echo "<form  id='Remake_form' action='create_post.php' method='post' style='width:98%;height:auto'>";
                     echo "<input id='Remake_ed' name='ID_POST' value='' style='visibility:hidden'>";
                     echo "</form>";  
+                    echo "</center>";
                 }
+
                 echo "<div class=\"Button\">";
                 if ($_SESSION['start']>1 && $_SESSION['end']+6<=$_SESSION['MAX_POST'])  
                 {
-                    echo "<input id='back' type='button' class='navbutton' value='Попередні' onclick=\"$('html, body').scrollTop(0); pass(); $('.Data').load('back.php');\">\r";
-                    echo "<input id='next' type='button' class='navbutton' value='Наступні' onclick=\"$('html, body').scrollTop(0); pass();$('.Data').load('next.php');\">\r";
+                    echo "<input id='back' type='button' class='navbutton' value='Попередні' onclick=\"$('html, body').scrollTop(0); pass(); $('.Data').load('Php_requests/back.php');\">\r";
+                    echo "<input id='next' type='button' class='navbutton' value='Наступні' onclick=\"$('html, body').scrollTop(0); pass();$('.Data').load('Php_requests/next.php');\">\r";
                 }
                 elseif ($_SESSION['start']>1 && $_SESSION['end']+6>=$_SESSION['MAX_POST'])
                 {
-                    echo "<input id='back' type='button' class='navbutton' value='Попередні' onclick=\"$('html, body').scrollTop(0); pass(); $('.Data').load('back.php');\">\r";
+                    echo "<input id='back' type='button' class='navbutton' value='Попередні' onclick=\"$('html, body').scrollTop(0); pass(); $('.Data').load('Php_requests/back.php');\">\r";
                 }
                 else 
                 {
-                    echo "<input id='next' type='button' class='navbutton' value='Наступні' onclick=\"$('html, body').scrollTop(0); pass();$('.Data').load('next.php');\">\r";
+                    echo "<input id='next' type='button' class='navbutton' value='Наступні' onclick=\"$('html, body').scrollTop(0); pass();$('.Data').load('Php_requests/next.php');\">\r";
                 }                                 
                 echo "</div>";
 echo "<script>";

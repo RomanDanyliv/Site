@@ -1,10 +1,10 @@
 <?php
 session_start();
-$_SESSION['start']=1;
-$_SESSION['end']=6;
+if ($_SESSION['Login']!="Admin")
+exit;
 include "Page_parts/Top.php";
 include "Page_parts/Header.php";
 include "Page_parts/Nav_panel.php";
-include "Pages/News_page.php";
+include "Pages/Create_post_page.php";
 include "Page_parts/End.php";
 ?>

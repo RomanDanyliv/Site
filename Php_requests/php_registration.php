@@ -7,8 +7,8 @@ unset($_SESSION['Login']);
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<script src="script/jQuery.js" type="text/javascript"></script>
-	<script src="script/main.js" type="text/javascript"></script>
+	<script src="Script/jQuery.js" type="text/javascript"></script>
+	<script src="Script/main.js" type="text/javascript"></script>
 	<title>NO game NO party</title>
 	<link rel="stylesheet" href="css/main.css" type="text/css">
 </head>

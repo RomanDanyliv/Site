@@ -21,8 +21,8 @@ mysql_close($mysqli);
 
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-        <script src="script/jQuery.js" type="text/javascript"></script>
-        <script src="script/main.js" type="text/javascript"></script>
+        <script src="Script/jQuery.js" type="text/javascript"></script>
+        <script src="Script/main.js" type="text/javascript"></script>
         <link rel="stylesheet" href="Style.css">
         <title>
             Test
@@ -42,7 +42,7 @@ mysql_close($mysqli);
                     <div id="search_prev"></div>
                 </form>
                 <?php
-                   include "php_user_name.php";
+                   include "Php_requests/php_user_name.php";
                 ?>
             </div>
         </div>

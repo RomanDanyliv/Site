@@ -167,7 +167,7 @@ function read_more(el) {
 
 function del(ident) {
     if (confirm("Точно видалити цей пост?"))
-        $.post('php_delete.php', {
+        $.post('Php_requests/php_delete.php', {
             Id: ident
         }).done(function () {
             window.location.reload();
@@ -175,7 +175,7 @@ function del(ident) {
 }
 
 function leave_comment(ident) {
-        $.post('php_delete.php', {
+        $.post('Php_requests/php_delete.php', {
             Id: ident
         }).done(function () {
             window.location.reload();
@@ -207,7 +207,7 @@ function create_renew() {
     while (str.indexOf("'") > 1) {
         str = str.slice(0, str.indexOf("'")) + '&prime;' + str.slice(str.indexOf("'") + 1);
     }
-    $.post('php_create_renew.php', {
+    $.post('Php_requests/php_create_renew.php', {
         Id: $("#ID").val(),
         LOGO: $('#LOGO').val(),
         BODY_TXT: str,
@@ -221,7 +221,7 @@ function create_renew() {
 }
 
 function pass() {
-    if (is_scretch == true) $(".Data")[1].click();
+    //if (is_scretch == true) $(".Data")[1].click();
 }
 
 function renew_page() {
