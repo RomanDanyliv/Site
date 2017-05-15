@@ -124,10 +124,13 @@ input {
     background: #faf6f6;
     border-bottom: 4px solid maroon;
     border-top: 4px solid maroon;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .Navbutton {
-    flex: 1 1 calc((100%+30px)/2);
+    flex: auto;
+    display: flex;
     padding: 1em;
     background: #d07e7e;
     color: #ffffff;
@@ -137,6 +140,10 @@ input {
     transition: 0.3s;
     margin: 0 2% 0 2%;
     text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;    
+    border-style: double;
+    border-color: #f2f2f2;
 }
 
 .Adv {
@@ -157,11 +164,13 @@ blockquote {
     font-weight: 300;
 }
 
-p {
+.p {
     color: #fff;
     font-style: italic;
     font-size: 170%;
     margin: 0;
+    display: flex;
+    flex: auto;
 }
 
 figcaption {
@@ -174,7 +183,6 @@ figcaption {
     align-items: stretch;
     flex-direction: row wrap;
     background: #f2f2f2;
-    width: 100%;
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -312,4 +320,11 @@ label {
 .Search_prev:hover
 {
     background-color: lightgrey;
+}
+.BlocQuote {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    background-color: brown;
+    flex-wrap: wrap;
 }

@@ -3,12 +3,10 @@
             <img id='Nyan_Cat' class="Adv" src="images/NyanCat/1.jpg" onmouseover="NyanCat()" onmouseout="audio_stop()">
         </div>
         <div class="Data">
-            <blockquote id="BlockQ1">
-                <p>
+            <div  id="BlockQ1" class="p BlocQuote">
                     TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
-                </p>
-            </blockquote>
-            <blockquote id="BlockQ2">
+            </div>
+            <div id="BlockQ2" class="BlocQuote">
                 <figure onclick="$('figure').not(this).toggle('slow');$('#fig_sub').toggle('slow')">
                     <img src="images/BioShock_Infinite_Logo.png" width="320" height="240" alt="BioShock">
                     <figcaption>BioShock Infinite</figcaption>
@@ -17,6 +15,6 @@
                     <img src="images/BioShock_Infinite_Logo.png" width="320" height="240" alt="BioShock">
                     <figcaption>BioShock Infinite</figcaption>
                 </figure>
-            </blockquote>
+            </div>
         </div>
     </div>
