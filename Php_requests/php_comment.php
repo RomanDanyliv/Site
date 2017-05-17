@@ -15,8 +15,8 @@ $query .=date('y-m-d')."')";
 $result = mysql_query($query);
 echo "</br>Ваш коментар збережено"; 
 mysql_close($mysqli);
-header("Refresh:0, url=news.php");
+header("Refresh:0, url=../news.php");
 ?>
 <script>
-window.location.replace("news.php");
+window.location.replace("../news.php");
 </script>

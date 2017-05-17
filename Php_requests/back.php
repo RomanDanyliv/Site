@@ -2,8 +2,6 @@
 session_start(); 
 $_SESSION['start']-=6;
 $_SESSION['end']-=6;
-?>
-    <?php   
 $mysqli = mysql_connect('localhost', 'root', '');
 		if (mysqli_connect_errno()) {
 			echo "Подключение невозможно: ".mysqli_connect_error();
